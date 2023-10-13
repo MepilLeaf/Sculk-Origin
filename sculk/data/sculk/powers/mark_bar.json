@@ -1,0 +1,20 @@
+{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 100,
+  "hud_render": {
+    "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+    "bar_index": 19
+  },
+  "start_value": 0,
+  "min_action": {
+    "type": "origins:change_resource",
+    "resource": "sculk:mark_activate_cooldown",
+    "change": -1
+  },
+  "max_action": {
+    "type": "origins:change_resource",
+    "resource": "sculk:mark_charging",
+    "change": -1
+  }
+}

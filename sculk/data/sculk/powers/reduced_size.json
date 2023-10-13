@@ -1,0 +1,38 @@
+{
+    "name": "Reduced Size",
+    "description": "You don't have the strength to stay in a larger form so you are smaller but have reduced health.",
+    "type": "origins:multiple",
+    "size": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "function sculk:size",
+            "permission_level": 4
+        },
+        "entity_action_added": {
+            "type": "origins:execute_command",
+            "command": "function sculk:size",
+            "permission_level": 4
+        },
+        "entity_action_respawned": {
+            "type": "origins:execute_command",
+            "command": "function sculk:size",
+            "permission_level": 4
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "function sculk:reset_size",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+    "less_hearts": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health decrease",
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -4
+        }
+    }
+}

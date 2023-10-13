@@ -1,0 +1,223 @@
+{
+  "type": "origins:multiple",
+  "charging_particles": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function sculk:charging_particles",
+      "permission_level": 4
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "sculk:mark_charging",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:resource",
+          "resource": "sculk:mark_bar",
+          "comparison": "<",
+          "compare_to": 80
+        }
+      ]
+    }
+  },
+  "charging": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": true
+    },
+    "start_value": 0
+  },
+  "activate_charging": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "sculk:mark_charging",
+          "change": 1
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.warden.sonic_charge",
+          "volume": 1.5
+        }
+      ]
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:mark_bar",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:mark_bar",
+      "change": 3
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:mark_charging",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "activate_cooldown": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": true
+    }
+  },
+  "cooldown": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:mark_bar",
+      "change": -1
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:mark_activate_cooldown",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "hit": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:delay",
+            "ticks": 8,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function sculk:mark",
+              "permission_level": 4
+            }
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+              "type": "origins:add_velocity",
+              "y": 1
+            }
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "sculk:mark_activated",
+            "change": -1
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function sculk:mark_effect_visual",
+            "permission_level": 4
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function sculk:mark_effect_audio",
+              "permission_level": 4
+            }
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function sculk:mark_remove",
+            "permission_level": 4
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "sculk:mark_activate_cooldown",
+            "change": 1
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "sculk:mark_bar",
+        "comparison": "==",
+        "compare_to": 100
+      }
+    },
+    "cooldown": 0,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "check_distance": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function sculk:mark_check",
+      "permission_level": 4
+    },
+    "interval": 1
+  },
+  "damage_marked": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function sculk:damage_marked",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function sculk:damage_marked_particles",
+          "permission_level": 4
+        }
+      ]
+    },
+    "interval": 20
+  }
+}

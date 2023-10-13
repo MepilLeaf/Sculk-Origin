@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "sculk:reduced_size",
+    "sculk:sculk_meter",
+    "sculk:mark_bar",
+    "sculk:mark",
+    "sculk:meld"
+  ],
+  "icon": "minecraft:sculk_sensor",
+  "order": 1,
+  "impact": 3,
+  "name": "Sculk",
+  "description": "super cool sculk desc"
+}

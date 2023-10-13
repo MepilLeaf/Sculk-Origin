@@ -1,0 +1,67 @@
+{
+  "type": "origins:multiple",
+  "bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 18
+    },
+    "start_value": 100
+  },
+  "passive": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": -1
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk"
+          },
+          "inverted": "true"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_sensor"
+          },
+          "inverted": "true"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_shrieker"
+          },
+          "inverted": "true"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_catalyst"
+          },
+          "inverted": "true"
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:calibrated_sculk_sensor"
+          },
+          "inverted": "true"
+        }
+      ]
+    }
+  }
+}
