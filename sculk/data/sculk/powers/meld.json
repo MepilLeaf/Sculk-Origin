@@ -1,17 +1,87 @@
 {
-  "type": "origins:phasing",
-  "blacklist": true,
-  "render_type": "none",
-  "block_condition": {
-    "type": "origins:in_tag",
-    "tag": "origins:unphasable"
+  "type": "origins:multiple",
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "none",
+    "block_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block",
+          "block": "minecraft:sculk",
+          "inverted": true
+        },
+        {
+          "type": "origins:block",
+          "block": "minecraft:sculk_catalyst",
+          "inverted": true
+        }
+      ]
+    },
+    "phase_down_condition": {
+      "type": "origins:sneaking"
+    }
   },
-  "phase_down_condition": {
-    "type": "origins:and",
-    "conditions": [
+  "no_fall_dmg": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk"
+          }
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_catalyst"
+          }
+        }
+      ]
+    }
+  },
+  "blind_when_phasing": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "effects": [
       {
-        "type": "origins:sneaking"
+        "effect": "minecraft:darkness",
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": false
       }
-    ]
-  }
+    ],
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk"
+          }
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_catalyst"
+          }
+        }
+      ]
+    }
+  },
+  "name": "§3§nMeld",
+  "description": "You can pass through sculk and sculk catalysts, doing this will also repair your form."
 }

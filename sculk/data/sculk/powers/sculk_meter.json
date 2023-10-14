@@ -3,19 +3,93 @@
   "bar": {
     "type": "origins:resource",
     "min": 0,
-    "max": 100,
+    "max": 1000,
     "hud_render": {
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
       "bar_index": 18
     },
-    "start_value": 100
+    "start_value": 1000,
+    "min_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar_depleted",
+      "change": 1
+    }
   },
-  "passive": {
+  "bar_reset": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": 1000
+    }
+  },
+  "bar_depleted": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 0
+  },
+  "bar_depleted_reset": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar_depleted",
+      "change": -1
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:sculk_meter_bar",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "bar_depleated_damage": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 2,
+      "source": {
+        "name": "wither",
+        "bypass_armor": true,
+        "unblockable": true
+      }
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:sculk_meter_bar_depleted",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "buffer": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 40,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 40
+  },
+  "increase_buffer": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_buffer",
+      "change": 1
+    },
+    "interval": 1
+  },
+  "passive_drain": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "sculk:sculk_meter_bar",
-      "change": -1
+      "change": -5
     },
     "interval": 20,
     "condition": {
@@ -33,35 +107,112 @@
           "type": "origins:in_block",
           "block_condition": {
             "type": "origins:block",
-            "block": "minecraft:sculk_sensor"
+            "block": "minecraft:sculk_catalyst"
           },
           "inverted": "true"
         },
         {
+          "type": "origins:resource",
+          "resource": "sculk:sculk_meter_buffer",
+          "comparison": "==",
+          "compare_to": 40
+        }
+      ]
+    }
+  },
+  "no_attack": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "tick_rate": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "sculk:sculk_meter_bar_depleted",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "regenerate_bar": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": 20
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
           "type": "origins:in_block",
           "block_condition": {
             "type": "origins:block",
-            "block": "minecraft:sculk_shrieker"
-          },
-          "inverted": "true"
+            "block": "minecraft:sculk"
+          }
         },
         {
           "type": "origins:in_block",
           "block_condition": {
             "type": "origins:block",
             "block": "minecraft:sculk_catalyst"
-          },
-          "inverted": "true"
-        },
-        {
-          "type": "origins:in_block",
-          "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:calibrated_sculk_sensor"
-          },
-          "inverted": "true"
+          }
         }
       ]
     }
-  }
+  },
+  "attack_bar_drain": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": -10
+    },
+    "cooldown": 1
+  },
+  "sun_bar_drain": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": -1
+    },
+    "interval": 2,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "sculk:sculk_meter_buffer",
+          "comparison": "==",
+          "compare_to": 40
+        }
+      ]
+    }
+  },
+  "sprinting_bar_drain": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "sculk:sculk_meter_bar",
+      "change": -5
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:sprinting"
+    }
+  },
+  "name": "§3§nWithering Form",
+  "description": "As you are a fusion of sculk, your form is unstable and gradually deteriorates. You must periodically repair it",
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You have a sculk stability indicator that shows your how stable your form is, if it drops to zero you will start to take damage."
+    }
+  ]
 }

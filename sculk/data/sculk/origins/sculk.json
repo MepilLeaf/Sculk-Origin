@@ -4,11 +4,18 @@
     "sculk:sculk_meter",
     "sculk:mark_bar",
     "sculk:mark",
-    "sculk:meld"
+    "sculk:meld",
+    "sculk:sculk_vein_crafting",
+    "sculk:repair",
+    "sculk:unique_diet",
+    "sculk:modified_regeneration",
+    "sculk:ancient_city_spawn",
+    "sculk:silk_touch_for_sculk",
+    "sculk:catalyst_crafting"
   ],
   "icon": "minecraft:sculk_sensor",
   "order": 1,
   "impact": 3,
   "name": "Sculk",
-  "description": "super cool sculk desc"
+  "description": "You are a rare being, a collection of sculk formed in the depths of the deep dark. Being made of sculk gives you special abilities, but you must face a unique set of challenges."
 }

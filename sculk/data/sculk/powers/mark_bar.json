@@ -16,5 +16,6 @@
     "type": "origins:change_resource",
     "resource": "sculk:mark_charging",
     "change": -1
-  }
+  },
+  "hidden": true
 }

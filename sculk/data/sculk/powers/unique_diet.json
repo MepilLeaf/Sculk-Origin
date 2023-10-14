@@ -1,0 +1,20 @@
+{
+  "type": "origins:multiple",
+  "no_food_use": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:food"
+    }
+  },
+  "feed": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 1,
+      "saturation": 1
+    },
+    "interval": 1
+  },
+  "name": "§3§nUnique Diet",
+  "description": "You don't need to worry about hunger, but you can't eat solid food. However, you can still absorb liquids"
+}

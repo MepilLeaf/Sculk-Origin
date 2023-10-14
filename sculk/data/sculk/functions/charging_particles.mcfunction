@@ -1,1 +1,1 @@
-execute at @s run particle minecraft:enchant ~ ~0.5 ~ 0 0 0 0.5 3 normal
+execute at @s run particle minecraft:enchant ~ ~0.5 ~ 0 0 0 0.5 10 normal

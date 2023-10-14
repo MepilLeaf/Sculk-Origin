@@ -1,6 +1,6 @@
 {
-    "name": "Reduced Size",
-    "description": "You don't have the strength to stay in a larger form so you are smaller but have reduced health.",
+    "name": "§3§nReduced Size",
+    "description": "You are smaller than humans. Your reduced size grants mobility, but you also have reduced health.",
     "type": "origins:multiple",
     "size": {
         "type": "origins:action_on_callback",
@@ -33,6 +33,15 @@
             "attribute": "minecraft:generic.max_health",
             "operation": "addition",
             "value": -4
+        }
+    },
+    "less_damage": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Attack damage decrease",
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_total",
+            "value": -0.25
         }
     }
 }

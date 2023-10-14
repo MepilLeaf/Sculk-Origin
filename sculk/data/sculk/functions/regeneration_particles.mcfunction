@@ -1,0 +1,1 @@
+particle minecraft:sculk_charge_pop ~ ~0.5 ~ 0 0 0 0.05 3 normal

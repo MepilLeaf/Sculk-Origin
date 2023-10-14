@@ -31,7 +31,7 @@
     "min": 0,
     "max": 1,
     "hud_render": {
-      "should_render": true
+      "should_render": false
     },
     "start_value": 0
   },
@@ -86,7 +86,7 @@
     "min": 0,
     "max": 1,
     "hud_render": {
-      "should_render": true
+      "should_render": false
     }
   },
   "cooldown": {
@@ -163,14 +163,6 @@
         {
           "type": "origins:actor_action",
           "action": {
-            "type": "origins:execute_command",
-            "command": "function sculk:mark_remove",
-            "permission_level": 4
-          }
-        },
-        {
-          "type": "origins:actor_action",
-          "action": {
             "type": "origins:change_resource",
             "resource": "sculk:mark_activate_cooldown",
             "change": 1
@@ -218,6 +210,14 @@
         }
       ]
     },
-    "interval": 20
-  }
+    "interval": 40
+  },
+  "name": "§3§nMark",
+  "description": "Gather energy to empower your next attack, knocking up enemies and marking them. Marked enemies that walk across sculk are damaged. Only one enemy can be marked at a time.",
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Activate with your primary active key."
+    }
+  ]
 }

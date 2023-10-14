@@ -1,0 +1,8 @@
+{
+  "type": "origins:modify_player_spawn",
+  "dimension": "minecraft:overworld",
+  "structure": "ancient_city",
+  "spawn_strategy": "center",
+  "name": "§3§nFrom the Depths",
+  "description": "You originate from the sculk in the deep dark. Despite being made of sculk, the deep dark remains a hostile environment for you."
+}

@@ -1,0 +1,156 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "sculk": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:sculk"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "sculk_vein": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:sculk_vein"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk_vein"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "sculk_catalyst": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:sculk_catalyst"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk_catalyst"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "sculk_sensor": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:sculk_sensor"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk_sensor"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "sculk_shrieker": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:sculk_shrieker"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:sculk_shrieker"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "calibrated_sculk_sensor": {
+    "type": "origins:action_on_block_break",
+    "entity_action": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:calibrated_sculk_sensor"
+      }
+    },
+    "block_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[distance=0,type=experience_orb]"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:calibrated_sculk_sensor"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
+    },
+    "only_when_harvested": false
+  },
+  "name": "§3§nSculk Touch",
+  "description": "You can carefully break sculk-related blocks with your bare hands."
+}

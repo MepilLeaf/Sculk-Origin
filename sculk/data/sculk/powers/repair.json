@@ -1,0 +1,66 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+          "type": "origins:consume",
+          "amount": 1
+        }
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:block.sculk.place",
+        "volume": 3
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "sculk:sculk_meter_bar",
+        "change": 250
+      }
+    ]
+  },
+  "cooldown": 1,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:sculk_vein"
+          }
+        }
+      },
+      {
+        "type": "origins:resource",
+        "resource": "sculk:sculk_meter_bar",
+        "comparison": "<",
+        "compare_to": 1000
+      }
+    ]
+  },
+  "name": "§3§nRepair",
+  "description": "You can mend your body using Sculk Veins",
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Activate with your secondary active key while holding sculk veins."
+    },
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You can craft 3 sculk veins with 1 sculk block."
+    }
+  ]
+}

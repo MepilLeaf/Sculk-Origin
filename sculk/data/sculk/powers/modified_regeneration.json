@@ -1,0 +1,59 @@
+{
+  "type": "origins:multiple",
+  "no_regen": {
+    "type": "origins:disable_regen"
+  },
+  "sculk_regen": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:heal",
+          "amount": 1
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "sculk:sculk_meter_bar",
+          "change": -30
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.sculk.break",
+          "volume": 3
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function sculk:regeneration_particles",
+          "permission_level": 4
+        }
+      ]
+    },
+    "cooldown": 30,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:relative_health",
+          "comparison": "<",
+          "compare_to": 1
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    }
+  },
+  "name": "§3§nSculk Regeneration",
+  "description": "You lack natural health regeneration. You can manually force yourself to regenerate health, but it takes a toll on your form.",
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "Sneak and hold your secondary active key."
+    }
+  ]
+}
