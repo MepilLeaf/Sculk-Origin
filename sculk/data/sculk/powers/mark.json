@@ -210,7 +210,7 @@
         }
       ]
     },
-    "interval": 40
+    "interval": 30
   },
   "name": "§3§nMark",
   "description": "Gather energy to empower your next attack, knocking up enemies and marking them. Marked enemies that walk across sculk are damaged. Only one enemy can be marked at a time.",
