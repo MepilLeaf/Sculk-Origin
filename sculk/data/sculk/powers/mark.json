@@ -226,7 +226,7 @@
     },
     {
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "An enemy will have their mark removed if they are too far away. You can launch yourself, but you cannot mark yourself, or other players that have the sculk origin."
+      "text": "An enemy will have their mark removed if they are too far away. You can launch yourself, but you cannot mark yourself, or other players that have the sculk origin. Multiple enemies can be marked at once."
     }
   ]
 }
