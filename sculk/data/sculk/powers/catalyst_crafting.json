@@ -19,14 +19,8 @@
     "result": {
       "item": "minecraft:sculk_catalyst",
       "count": 1
-    },
-    "name": "§3§nCatalyst",
-    "description": "You have the ability to craft sculk catalysts.",
-    "badges": [
-      {
-        "sprite": "origins:textures/gui/badge/info.png",
-        "text": "Surround an amethyst shard with 8 blocks of sculk."
-      }
-    ]
-  }
+    }
+  },
+  "name": "§3§nCatalyst",
+  "description": "You have the ability to craft sculk catalysts."
 }

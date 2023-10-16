@@ -171,13 +171,18 @@
       ]
     },
     "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "sculk:mark_bar",
-        "comparison": "==",
-        "compare_to": 100
-      }
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "sculk:mark_bar",
+            "comparison": "==",
+            "compare_to": 100
+          }
+        }
+      ]
     },
     "cooldown": 0,
     "hud_render": {
@@ -213,11 +218,15 @@
     "interval": 30
   },
   "name": "§3§nMark",
-  "description": "Gather energy to empower your next attack, knocking up enemies and marking them. Marked enemies that walk across sculk are damaged. Only one enemy can be marked at a time.",
+  "description": "Gather energy to empower your next attack, knocking up enemies and marking them. Marked enemies that walk across sculk are damaged.",
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
       "text": "Activate with your primary active key."
+    },
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "An enemy will have their mark removed if they are too far away. You can launch yourself, but you cannot mark yourself, or other players that have the sculk origin."
     }
   ]
 }

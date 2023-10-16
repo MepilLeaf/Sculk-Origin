@@ -52,15 +52,11 @@
     ]
   },
   "name": "§3§nRepair",
-  "description": "You can mend your body using Sculk Veins",
+  "description": "You can mend your body using Sculk Veins.",
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
       "text": "Activate with your secondary active key while holding sculk veins."
-    },
-    {
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "You can craft 3 sculk veins with 1 sculk block."
     }
   ]
 }

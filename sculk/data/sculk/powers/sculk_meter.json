@@ -120,21 +120,6 @@
       ]
     }
   },
-  "no_attack": {
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_damage",
-      "operation": "multiply_total",
-      "value": -1
-    },
-    "tick_rate": 1,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "sculk:sculk_meter_bar_depleted",
-      "comparison": "==",
-      "compare_to": 1
-    }
-  },
   "regenerate_bar": {
     "type": "origins:action_over_time",
     "entity_action": {

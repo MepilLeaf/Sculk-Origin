@@ -1,0 +1,1 @@
+data modify entity @e[type=minecraft:warden, distance=0..20, limit=1] Brain.memories.minecraft:dig_cooldown.ttl set value 0
