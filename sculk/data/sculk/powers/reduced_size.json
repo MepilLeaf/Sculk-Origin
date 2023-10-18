@@ -1,6 +1,6 @@
 {
     "name": "§3§nReduced Size",
-    "description": "You are smaller than humans. Your reduced size grants mobility, but you also have reduced health.",
+    "description": "You are smaller than humans. Your reduced size grants mobility, but you also have reduced health and attack damage.",
     "type": "origins:multiple",
     "size": {
         "type": "origins:action_on_callback",
