@@ -52,7 +52,7 @@
   "description": "You lack natural health regeneration. You can manually force yourself to regenerate health, but it takes a toll on your form.",
   "badges": [
     {
-      "sprite": "origins:textures/gui/badge/info.png",
+      "sprite": "origins:textures/gui/badge/active.png",
       "text": "Sneak and hold your secondary active key."
     }
   ]
