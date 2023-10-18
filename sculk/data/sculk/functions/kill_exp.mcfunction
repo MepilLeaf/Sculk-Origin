@@ -1,0 +1,1 @@
+kill @e[distance=0,type=experience_orb]
