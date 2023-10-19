@@ -32,7 +32,7 @@
           "effect": {
             "effect": "minecraft:slowness",
             "amplifier": 3,
-            "duration": 30,
+            "duration": 34,
             "is_ambient": true,
             "show_particles": false,
             "show_icon": false
