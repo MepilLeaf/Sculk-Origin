@@ -34,7 +34,7 @@
             "amplifier": 3,
             "duration": 30,
             "is_ambient": true,
-            "show_particles": true,
+            "show_particles": false,
             "show_icon": false
           }
         }
@@ -76,7 +76,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "Sneak and hold your secondary active key."
+      "text": "Hold your secondary active key while you aren't holding sculk_veins."
     }
   ]
 }

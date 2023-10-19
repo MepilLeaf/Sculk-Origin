@@ -3,8 +3,7 @@
   "phase": {
     "type": "origins:phasing",
     "blacklist": true,
-    "render_type": "blindness",
-    "view_distance": 6,
+    "render_type": "none",
     "block_condition": {
       "type": "origins:and",
       "conditions": [
@@ -30,6 +29,39 @@
       "type": "origins:name",
       "name": "fall"
     },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk"
+          }
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:sculk_catalyst"
+          }
+        }
+      ]
+    }
+  },
+  "blind_when_phasing": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "effects": [
+      {
+        "effect": "minecraft:darkness",
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": false
+      }
+    ],
     "condition": {
       "type": "origins:or",
       "conditions": [
