@@ -26,6 +26,17 @@
           "type": "origins:execute_command",
           "command": "function sculk:regeneration_particles",
           "permission_level": 4
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 30,
+            "is_ambient": true,
+            "show_particles": true,
+            "show_icon": false
+          }
         }
       ]
     },
@@ -34,12 +45,24 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:sneaking"
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:sculk_vein"
+            }
+          },
+          "inverted": true
         },
         {
           "type": "origins:relative_health",
           "comparison": "<",
           "compare_to": 1
+        },
+        {
+          "type": "origins:moving",
+          "inverted": true
         }
       ]
     },
@@ -53,7 +76,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "Sneak and hold your secondary active key."
+      "text": "Hold your secondary active key while you aren't holding sculk_veins."
     }
   ]
 }

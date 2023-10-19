@@ -1,0 +1,6 @@
+{
+  "type": "origins:prevent_game_event",
+  "event": "minecraft:step",
+  "name": "§3§nSoft Steps",
+  "description": "Your feet don't produce vibrations when you walk or run."
+}

@@ -13,7 +13,8 @@
     "sculk:silk_touch_for_sculk",
     "sculk:catalyst_crafting",
     "sculk:force_warden_dig_on_respawn",
-    "sculk:sculk_tag_manager"
+    "sculk:sculk_tag_manager",
+    "sculk:prevent_vibrations"
   ],
   "icon": "minecraft:sculk_sensor",
   "order": 1,
