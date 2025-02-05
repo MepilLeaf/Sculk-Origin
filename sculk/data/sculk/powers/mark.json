@@ -218,7 +218,7 @@
     "interval": 30
   },
   "name": "§3§nMark",
-  "description": "Gather energy to empower your next attack, knocking up enemies and marking them. Marked enemies that walk across sculk are damaged.",
+  "description": "Gather energy to empower your next attack, launching up enemies and marking them. Marked enemies that walk across sculk are damaged.",
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
